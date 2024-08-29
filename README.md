@@ -1,6 +1,15 @@
 ![image](https://github.com/user-attachments/assets/3bf762e2-7269-4a41-ba74-be588c0733e0)
 
 [Story](https://www.story.foundation/) is a blockchain making IP protection and licensing programmable and efficient. It automates IP management, allowing creators to easily license, remix, and monetize their work. With Story, traditional legal complexities are replaced by on-chain smart contracts and off-chain legal agreements, simplifying the entire process.
+## System Requirements
+
+| **Hardware** | **Minimum Requirement** |
+|--------------|-------------------------|
+| **CPU**      | 4 Cores                 |
+| **RAM**      | 8 GB                    |
+| **Disk**     | 200 GB                  |
+| **Bandwidth**| 10 MBit/s               |
+
 
 ## Auto Install with systemd
 ```
