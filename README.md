@@ -10,6 +10,9 @@
 | **Disk**     | 200 GB                  |
 | **Bandwidth**| 10 MBit/s               |
 
+## RPC 
+
+**Cosmos RPC**: https://story-cosmos-testnet-rpc.tech-coha05.xyz
 
 ## Auto Install with systemd
 ```
