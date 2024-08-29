@@ -40,6 +40,8 @@ sudo nano ~/.story/story/config/private_key.txt
 ```
 story validator create --stake 1000000000000000000 --private-key "your_private_key"
 ```
+![image](https://github.com/user-attachments/assets/3a6971ca-6b7c-4463-9a59-7a9c33d94dcc)
+
 ## BACK UP FILE
 
 1. Wallet private key:
