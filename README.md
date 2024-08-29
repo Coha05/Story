@@ -12,8 +12,9 @@
 
 ## RPC 
 
-**Cosmos RPC**: https://story-cosmos-testnet-rpc.tech-coha05.xyz
+**- Cosmos RPC**: https://story-cosmos-testnet-rpc.tech-coha05.xyz
 
+**- Validator assdress**: https://testnet.story.explorers.guru/validator/storyvaloper15a4fph700vr0t0arfsrleeyh4al9087ee3evct
 ## Auto Install with systemd
 ```
 source <(curl -s https://raw.githubusercontent.com/Coha05/Story/main/auto-install-story.sh)
