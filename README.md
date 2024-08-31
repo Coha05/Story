@@ -14,6 +14,14 @@
 
 **- Cosmos RPC**: https://story-cosmos-testnet-rpc.tech-coha05.xyz
 
+## LIVE PEERS
+
+```
+PEERS=$(curl -sS [https://0grpc.tech-coha05.xyz/net_info](https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info) | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+echo $PEERS
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
+```
+
 **- Validator assdress**: https://testnet.story.explorers.guru/validator/storyvaloper15a4fph700vr0t0arfsrleeyh4al9087ee3evct
 ## Auto Install with systemd
 ```
