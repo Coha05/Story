@@ -17,7 +17,7 @@
 ## LIVE PEERS
 
 ```
-PEERS=$(curl -sS [https://0grpc.tech-coha05.xyz/net_info](https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info) | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+PEERS=$(curl -sS https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
 echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 ```
