@@ -16,6 +16,8 @@
 
 **- Validator assdress**: https://testnet.story.explorers.guru/validator/storyvaloper15a4fph700vr0t0arfsrleeyh4al9087ee3evct
 
+**- Peer:** https://story-testnet-peer.tech-coha05.xyz:36656
+
 ## LIVE PEERS
 
 ```
