@@ -20,6 +20,8 @@
 
 **- Peer:** b37eff82c86e867f8bf4df1199fbd90cc411b9dd@story-testnet-peer.tech-coha05.xyz:36656
 
+**- Snapshot:** [Click-here](https://github.com/Coha05/Story/tree/main/snapshot)
+
 ## LIVE PEERS
 
 ```
@@ -27,9 +29,6 @@ PEERS=$(curl -sS https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info | jq 
 echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 ```
-## SNAPSHOT 
-
-https://github.com/Coha05/Story/tree/main/snapshot
 
 ## Auto Install with systemd
 ```
