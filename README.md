@@ -14,7 +14,7 @@
 
 **- Cosmos RPC**: https://story-cosmos-testnet-rpc.tech-coha05.xyz
 
-**- Metamask RPC:** https://story-evm-testnet-rpc.tech-coha05.xy
+**- Metamask RPC:** https://story-evm-testnet-rpc.tech-coha05.xyz
 
 **- Validator assdress**: https://testnet.story.explorers.guru/validator/storyvaloper15a4fph700vr0t0arfsrleeyh4al9087ee3evct
 
