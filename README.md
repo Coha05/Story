@@ -33,6 +33,9 @@ source <(curl -s https://raw.githubusercontent.com/Coha05/Story/main/auto-instal
 ```
 
 ## Register your Validator 
+```
+curl localhost:26657/status | jq
+```
 
 Make sure `catching_up = false` ![image](https://github.com/user-attachments/assets/ab9bdfc4-5410-4ba8-921a-0d5049424740)
 
