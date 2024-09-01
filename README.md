@@ -23,7 +23,9 @@ PEERS=$(curl -sS https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info | jq 
 echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 ```
-## SNAPSHOT -> https://github.com/Coha05/Story/tree/main/snapshot
+## SNAPSHOT 
+
+https://github.com/Coha05/Story/tree/main/snapshot
 
 ## Auto Install with systemd
 ```
