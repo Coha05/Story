@@ -12,7 +12,7 @@ wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile
+echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> ~/.bash_profile
 source ~/.bash_profile
 go version
 
@@ -21,13 +21,13 @@ echo "Downloading and installing Story-Geth binary..."
 wget -q https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz -O /tmp/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
 tar -xzf /tmp/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz -C /tmp
 [ ! -d "$HOME/go/bin" ] && mkdir -p $HOME/go/bin
-sudo cp /tmp/geth-linux-amd64-0.9.2-ea9f0d2/geth $HOME/go/bin/story-geth
+cp /tmp/geth-linux-amd64-0.9.2-ea9f0d2/geth $HOME/go/bin/story-geth
 
 # Step 4: Download and Install Story Binary
 echo "Downloading and installing Story binary..."
 wget -q https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.12-9ae4a63.tar.gz -O /tmp/story-linux-amd64-0.9.12-9ae4a63.tar.gz
 tar -xzf /tmp/story-linux-amd64-0.9.12-9ae4a63.tar.gz -C /tmp
-sudo cp /tmp/story-linux-amd64-0.9.12-9ae4a63/story $HOME/go/bin/story
+cp /tmp/story-linux-amd64-0.9.12-9ae4a63/story $HOME/go/bin/story
 
 # Step 5: Initialize the Iliad Network Node
 echo "Initializing Iliad network node..."
@@ -42,7 +42,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=$HOME/go/bin/story-geth --iliad --syncmode full
+ExecStart=/root/go/bin/story-geth --iliad --syncmode full
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -60,7 +60,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=$HOME/go/bin/story run
+ExecStart=/root/go/bin/story run
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -85,7 +85,7 @@ sudo systemctl status story --no-pager -l
 echo "Checking logs for Story-Geth..."
 sudo journalctl -u story-geth -f -o cat &
 echo "Checking logs for Story..."
-sudo journalctl -u story -f -o cat &
+sudo journalctl -u story -f -o cat
 
 # Step 11: Check Sync Status
 echo "Checking sync status..."
