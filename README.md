@@ -20,7 +20,6 @@
 
 **- Peer:** b37eff82c86e867f8bf4df1199fbd90cc411b9dd@story-testnet-peer.tech-coha05.xyz:36656
 
-**- Snapshot:** [Click-here](https://github.com/Coha05/Story/tree/main/snapshot)
 
 ## LIVE PEERS
 
