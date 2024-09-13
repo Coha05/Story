@@ -24,7 +24,9 @@ RUN mkdir -p /root/go/bin
 WORKDIR /root
 RUN wget https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz && \
     tar -xzvf geth-linux-amd64-0.9.2-ea9f0d2.tar.gz && \
-    cp geth-linux-amd64-0.9.2-ea9f0d2/geth /root/go/bin/story-geth
+    cp geth-linux-amd64-0.9.2-ea9f0d2/geth /root/go/bin/story-geth && \
+    chmod +x /root/go/bin/story-geth && \
+    ls -l /root/go/bin/
 
 # Expose necessary ports
 EXPOSE 8545 30303 8546
