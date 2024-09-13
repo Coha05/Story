@@ -24,7 +24,9 @@ RUN mkdir -p /root/go/bin
 WORKDIR /root
 RUN wget https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.12-9ae4a63.tar.gz && \
     tar -xzvf story-linux-amd64-0.9.12-9ae4a63.tar.gz && \
-    cp story-linux-amd64-0.9.12-unstable-9ae4a63/story /root/go/bin/story
+    cp story-linux-amd64-0.9.12-unstable-9ae4a63/story /root/go/bin/story && \
+    chmod +x /root/go/bin/story && \
+    ls -l /root/go/bin/
 
 # Expose necessary ports
 EXPOSE 26656 26657
