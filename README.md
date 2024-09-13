@@ -55,7 +55,7 @@ sudo nano ~/.story/story/config/private_key.txt
 https://faucet.story.foundation
 ```
 
-### 4. You need at least have 1 IP on wallet before go to last step
+### 4. You need at least have 1024 IP on wallet before go to last step
 ### 5. Register validator
    
 ```
