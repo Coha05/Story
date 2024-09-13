@@ -17,15 +17,17 @@ RUN apt-get update && apt-get install -y \
 # Set environment variables
 ENV PATH="/root/go/bin:${PATH}"
 
+# Create the directory for go/bin
+RUN mkdir -p /root/go/bin
+
 # Download and install Story
 WORKDIR /root
 RUN wget https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.12-9ae4a63.tar.gz && \
     tar -xzvf story-linux-amd64-0.9.12-9ae4a63.tar.gz && \
-    mkdir -p /root/go/bin && \
-    cp story-linux-amd64-0.9.12-unstable-9ae4a63/story /root/go/bin
+    cp story-linux-amd64-0.9.12-unstable-9ae4a63/story /root/go/bin/story
 
 # Expose necessary ports
 EXPOSE 26656 26657
 
-# Command to run the Consensus node
+# Command to run the Story Consensus node
 CMD ["/root/go/bin/story", "run"]
