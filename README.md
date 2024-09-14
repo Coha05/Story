@@ -22,13 +22,16 @@
 
 
 ## LIVE PEERS
-
+**- Story Peers:**
 ```
 PEERS=$(curl -sS https://story-cosmos-testnet-rpc.tech-coha05.xyz/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
 echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 ```
-
+**- Geth Peer:**
+```
+story-geth --exec 'admin.addPeer("enode://fadb83227922096e59346a8b6ea442de0468ef2d3d10555ca2689596be967cc426acc6a885c0997a092164928aac5ea035e0a28039da1db4701c6cbc70e64992@story-testnet-peer-geth.tech-coha05.xyz:30303")' attach ~/.story/geth/iliad/geth.ipc
+```
 ## Snapshot 
 
 Visit service page: https://services.tech-coha05.xyz/networks/story/snapshot.html
