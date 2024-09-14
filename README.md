@@ -29,6 +29,10 @@ echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 ```
 
+## Snapshot 
+
+Visit service page: https://services.tech-coha05.xyz/networks/story/snapshot.html
+
 ## Auto Install with systemd
 ```
 source <(curl -s https://raw.githubusercontent.com/Coha05/Story/main/auto-install-story.sh)
