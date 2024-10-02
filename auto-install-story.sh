@@ -23,11 +23,11 @@ tar -xzf /tmp/geth-linux-amd64-0.9.3-b224fdf.tar.gz -C /tmp
 [ ! -d "$HOME/go/bin" ] && mkdir -p $HOME/go/bin
 cp /tmp/geth-linux-amd64-0.9.3-b224fdf/geth $HOME/go/bin/story-geth
 
-# Step 4: Download and Install Story Binary
-echo "Downloading and installing Story binary..."
-wget -q https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.10.1-57567e5.tar.gz -O /tmp/story-linux-amd64-0.10.1-57567e5.tar.gz
-tar -xzf /tmp/story-linux-amd64-0.10.1-57567e5.tar.gz -C /tmp
-cp /tmp/story-linux-amd64-0.10.1-57567e5/story $HOME/go/bin/story
+# Step 4: Download and Install Story Binary (v0.9.13)
+echo "Downloading and installing Story binary (v0.9.13)..."
+wget -q https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.13-b4c7db1.tar.gz -O /tmp/story-linux-amd64-0.9.13-b4c7db1.tar.gz
+tar -xzf /tmp/story-linux-amd64-0.9.13-b4c7db1.tar.gz -C /tmp
+cp /tmp/story-linux-amd64-0.9.13-b4c7db1/story $HOME/go/bin/story
 
 # Step 5: Initialize the Iliad Network Node
 echo "Initializing Iliad network node..."
