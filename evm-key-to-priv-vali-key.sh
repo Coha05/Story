@@ -16,7 +16,6 @@ const ecdh = crypto.createECDH('secp256k1');
 ecdh.setPrivateKey(privBuf);
 const pubKey = ecdh.getPublicKey(null, 'compressed');
 
-// SHA256 → RIPEMD160
 const sha = crypto.createHash('sha256').update(pubKey).digest();
 const ripemd = crypto.createHash('ripemd160').update(sha).digest();
 const address = ripemd.toString('hex').toUpperCase();
