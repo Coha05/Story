@@ -4,23 +4,25 @@ read -p "Enter priv_hex: " PRIV_HEX
 
 node <<EOF
 const crypto = require('crypto');
-const secp256k1 = require('secp256k1');
 
 const privHex = "$PRIV_HEX";
-const privBuf = Buffer.from(privHex, "hex");
-
-if (!secp256k1.privateKeyVerify(privBuf)) {
-  console.error("❌ Invalid private key.");
+if (!/^[0-9a-fA-F]{64}$/.test(privHex)) {
+  console.error("❌ Invalid private key format.");
   process.exit(1);
 }
 
-const pubKey = secp256k1.publicKeyCreate(privBuf, true);
+const privBuf = Buffer.from(privHex, "hex");
+const ecdh = crypto.createECDH('secp256k1');
+ecdh.setPrivateKey(privBuf);
+const pubKey = ecdh.getPublicKey(null, 'compressed');
+
+// SHA256 → RIPEMD160
 const sha = crypto.createHash('sha256').update(pubKey).digest();
 const ripemd = crypto.createHash('ripemd160').update(sha).digest();
 const address = ripemd.toString('hex').toUpperCase();
 
 const result = {
-  address: address,
+  address,
   pub_key: {
     type: "tendermint/PubKeySecp256k1",
     value: pubKey.toString('base64')
