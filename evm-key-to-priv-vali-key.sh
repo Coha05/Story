@@ -2,12 +2,13 @@
 echo "⚙️  evm-key-to-priv-vali-key.sh — thanks to BlockHunters for the idea!"
 
 read -p "Enter priv_hex: " PRIV_HEX
+export PRIV_HEX
 
-node <<EOF
+node <<'EOF'
 const crypto = require('crypto');
 const fs = require('fs');
 
-const privHex = "$PRIV_HEX";
+const privHex = process.env.PRIV_HEX;
 
 if (!/^[0-9a-fA-F]{64}$/.test(privHex)) {
   console.error("❌ Invalid private key format.");
@@ -35,8 +36,7 @@ const result = {
   }
 };
 
-const jsonStr = JSON.stringify(result, null, 2);
-fs.writeFileSync('priv_validator_key.json', jsonStr);
-console.log("✅ priv_validator_key.json generated:");
-console.log(jsonStr);
+fs.writeFileSync("priv_validator_key.json", JSON.stringify(result, null, 2));
+console.log("✅ priv_validator_key.json saved:");
+console.log(JSON.stringify(result, null, 2));
 EOF
